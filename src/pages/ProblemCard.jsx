@@ -30,7 +30,7 @@ export default function ProblemCard({pb, onUpdate, activeTab}){
 
             try {
                 const res = await axios.post(
-                    "http://54.145.219.157:8080/problem/update",
+                    `${process.env.REACT_APP_API_URL}/problem/update`,
                     updatedProblem, 
                     {headers: {Authorization: `Bearer ${token}`}}
                 );
@@ -59,7 +59,7 @@ export default function ProblemCard({pb, onUpdate, activeTab}){
     const onMarkDone = async(title) => {
         try {
             const encodeTitle = encodeURIComponent(title);
-            const res = await axios.post(`http://54.145.219.157:8080/problem/done/${encodeTitle}`,{}, {
+            const res = await axios.post(`${process.env.REACT_APP_API_URL}/problem/done/${encodeTitle}`,{}, {
                 headers:{
                     Authorization: `Bearer ${token}`
                 }
@@ -79,7 +79,7 @@ export default function ProblemCard({pb, onUpdate, activeTab}){
     const addToDueToday = async(title) => {
         try {
             const encodeTitle = encodeURIComponent(title);
-            const res = await axios.post(`http://54.145.219.157:8080/problem/addToDueToday/${encodeTitle}`,{}, {
+            const res = await axios.post(`${process.env.REACT_APP_API_URL}/problem/addToDueToday/${encodeTitle}`,{}, {
                 headers:{
                     Authorization: `Bearer ${token}`
                 }
@@ -102,7 +102,7 @@ export default function ProblemCard({pb, onUpdate, activeTab}){
     const resetProblem = async(title) => {
         try {
             const encodeTitle = encodeURIComponent(title);
-            const res = await axios.post(`http://54.145.219.157:8080/problem/reset/${encodeTitle}`,{}, {
+            const res = await axios.post(`${process.env.REACT_APP_API_URL}/problem/reset/${encodeTitle}`,{}, {
                 headers:{
                     Authorization: `Bearer ${token}`
                 }

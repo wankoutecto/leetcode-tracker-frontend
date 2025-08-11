@@ -15,7 +15,7 @@ export default function FutureReview({activeTab, update, onUpdate}){
     useEffect(() => {
         const fetchProblem = async() => {
             try {
-                const res = await axios.get("http://54.145.219.157:8080/problem/upcoming", {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/problem/upcoming`, {
                     headers:{
                         Authorization: `Bearer ${token}`
                     }

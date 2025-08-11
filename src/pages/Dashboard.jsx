@@ -29,19 +29,19 @@ export default function Dashboard({activeTab, update, onUpdate, onMoveToTab}){
         const fetchAllCategories = async () => {
             try {
                 const [dueRes, futureRes, overdueRes, fullyRes, problemList] = await Promise.all([
-                    axios.get("http://54.145.219.157:8080/problem/due/today", {
+                    axios.get(`${process.env.REACT_APP_API_URL}/problem/due/today`, {
                         headers: { Authorization: `Bearer ${token}` }
                     }),
-                    axios.get("http://54.145.219.157:8080/problem/upcoming", {
+                    axios.get(`${process.env.REACT_APP_API_URL}/problem/upcoming`, {
                         headers: { Authorization: `Bearer ${token}` }
                     }),
-                    axios.get("http://54.145.219.157:8080/problem/overdue", {
+                    axios.get(`${process.env.REACT_APP_API_URL}/problem/overdue`, {
                         headers: { Authorization: `Bearer ${token}` }
                     }),
-                    axios.get("http://54.145.219.157:8080/problem/completed", {
+                    axios.get(`${process.env.REACT_APP_API_URL}/problem/completed`, {
                         headers: { Authorization: `Bearer ${token}` }
                     }),
-                    axios.get("http://54.145.219.157:8080/problem/get/all", {
+                    axios.get(`${process.env.REACT_APP_API_URL}/problem/get/all`, {
                         headers: { Authorization: `Bearer ${token}` }
                     })
                 ]);

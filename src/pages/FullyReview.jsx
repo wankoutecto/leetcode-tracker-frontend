@@ -15,7 +15,7 @@ export default function FullyReview({activeTab, update, onUpdate}){
     useEffect(() => {
         const fetchProblem = async() => {
             try {
-                const res = await axios.get("http://54.145.219.157:8080/problem/completed", {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/problem/completed`, {
                     headers:{
                         Authorization: `Bearer ${token}`
                     }

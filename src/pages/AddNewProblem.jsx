@@ -26,7 +26,7 @@ export default function AddNewProblem({onUpdate}){
                 alert("You are not login. Please login to add new problem");
                 return;
             }
-            const res = await axios.post("http://54.145.219.157:8080/problem/add",
+            const res = await axios.post(`${process.env.REACT_APP_API_URL}/problem/add`,
                 { title, link, dateSolved, note, solutionCode },
                 {headers:{
                         Authorization: `Bearer ${token}`

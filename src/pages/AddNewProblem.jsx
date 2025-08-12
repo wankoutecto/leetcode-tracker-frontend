@@ -129,7 +129,7 @@ export default function AddNewProblem({onUpdate}){
                         <input
                         type="text"
                         value={solutionCode}
-                        onChange={(e) => setSolutionCode(edited)}    
+                        onChange={(e) => setSolutionCode(e.target.value)}    
                         onClick={() => setShowPopup(true)}
                         required
                         ></input>

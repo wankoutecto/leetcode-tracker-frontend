@@ -38,6 +38,7 @@ export default function Homepage(){
     const fetchData = async () => {
       try {
         const res = await axios.get(`${import.meta.env.VITE_API_URL}/problem/home`);
+        console.log("fetchData run");
         setProblemList(res.data);
       } catch (err) {
         if(!isTokenValid(token)){

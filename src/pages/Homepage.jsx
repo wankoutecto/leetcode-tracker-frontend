@@ -18,9 +18,11 @@ const TABS = ['Dashboard','Due Today', 'Future Review', 'Overdue', 'Fully Review
 
 export default function Homepage(){
   const { token, logout, username } = useAuth();
+  /*
   const [problemList, setProblemList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  */
   const [activeTab, setActiveTab] = useState("Dashboard");
   const navigate = useNavigate();
   const [update, setUpdate] = useState(0);
@@ -33,7 +35,7 @@ export default function Homepage(){
     setActiveTab(title);
   };
 
-  /*
+/*
   useEffect(() => {
     
     const fetchData = async () => {
@@ -53,11 +55,11 @@ export default function Homepage(){
 
     fetchData();
   }, [activeTab, token]);
-  */
+  
 
   if(loading) return <p>The page is loading...</p>
   if(error) return <p>Failed to fetch the data: {error.message}</p>
-
+*/
   return (
       <>
         <div className="header">

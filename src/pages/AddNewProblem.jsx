@@ -26,7 +26,7 @@ export default function AddNewProblem({onUpdate}){
                 alert("You are not login. Please login to add new problem");
                 return;
             }
-            const res = await axios.post(`${process.env.REACT_APP_API_URL}/problem/add`,
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/problem/add`,
                 { title, link, dateSolved, note, solutionCode },
                 {headers:{
                         Authorization: `Bearer ${token}`

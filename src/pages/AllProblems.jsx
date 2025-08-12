@@ -15,7 +15,7 @@ export default function AllProblems({activeTab, update, onUpdate}){
     useEffect(() => {
         const allProblem = async() => {
             try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/problem/get/all`, {
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}/problem/get/all`, {
                     headers:{
                         Authorization: `Bearer ${token}`
                     }
@@ -52,7 +52,7 @@ export default function AllProblems({activeTab, update, onUpdate}){
     const deleteProblem = async() => {
         try {
             const encodeTitle = encodeURIComponent(title);
-            const res = await axios.delete(`${process.env.REACT_APP_API_URL}/problem/delete/${encodeTitle}`,
+            const res = await axios.delete(`${import.meta.env.VITE_API_URL}/problem/delete/${encodeTitle}`,
                 {headers:{Authorization: `Bearer ${token}`}}
             )
             if(res.status === 200){

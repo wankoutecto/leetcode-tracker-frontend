@@ -18,8 +18,6 @@ export default function Login() {
                 username,
                 password
             });
-            console.log("API URL:", process.env.REACT_APP_API_URL);
-
             login(res.data.token, username);
             navigate('/');
         } catch (error) {

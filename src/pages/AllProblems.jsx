@@ -20,7 +20,6 @@ export default function AllProblems({activeTab, update, onUpdate}){
                         Authorization: `Bearer ${token}`
                     }
                 });
-                console.log(res);
                 setProblemList(res.data.data);
             } catch (err) {
                 if(err.status === 403 || err.status === 401){
@@ -56,7 +55,6 @@ export default function AllProblems({activeTab, update, onUpdate}){
                 {headers:{Authorization: `Bearer ${token}`}}
             )
             if(res.status === 200){
-                console.log("successful delete");
                 onUpdate();
             }     
         } catch (err) {

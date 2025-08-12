@@ -22,7 +22,6 @@ export default function FutureReview({activeTab, update, onUpdate}){
                 })
                 if(res.status === 200){
                     setProblemList(res.data.data);
-                    console.log(res.data.data);
                 }     
             }catch (err) {
                 if(!isTokenValid(token)){

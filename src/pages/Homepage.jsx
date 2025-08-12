@@ -33,6 +33,7 @@ export default function Homepage(){
     setActiveTab(title);
   };
 
+  /*
   useEffect(() => {
     
     const fetchData = async () => {
@@ -52,7 +53,7 @@ export default function Homepage(){
 
     fetchData();
   }, [activeTab, token]);
-
+  */
 
   if(loading) return <p>The page is loading...</p>
   if(error) return <p>Failed to fetch the data: {error.message}</p>
